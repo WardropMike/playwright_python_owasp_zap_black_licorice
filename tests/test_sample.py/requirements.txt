@@ -1,0 +1,5 @@
+Flask==1.1.1
+selenium==4.0.0.a7
+requests
+beautifulsoup4
+# --upgrade setuptools

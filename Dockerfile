@@ -10,14 +10,17 @@ FROM python:3.10-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the requirements.txt file first
-COPY app/requirements.txt .
+# Copy the requirements file
+COPY tests/test_sample/requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application
-COPY app/ .
+# Install Playwright dependencies and browsers
+RUN pip install --no-cache-dir playwright && playwright install
+
+# Copy the test scripts
+COPY tests/test_sample/ tests/test_sample/
 
 # Set the default command to run your script
-CMD ["python3", "src/extract_grid.py"]
+CMD ["python3", "tests/test_sample/extract_grid.py"]  

@@ -1,0 +1,26 @@
+name: Run Docker Image
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-docker:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Checkout the code
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3  # Enables multi-platform builds
+
+      - name: Build the Docker image
+        run: docker build -t black_licorice_pwp_ozap .
+
+      - name: Run the Docker container
+        run: docker run --rm -i black_licorice_pwp_ozap

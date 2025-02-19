@@ -5,7 +5,7 @@
 # COPY index.html /usr/share/nginx/html/index.html
 
 # Use a lightweight Python image
-FROM python:3.10-alpine
+FROM python:3.10-slim
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -17,10 +17,10 @@ COPY tests/test_sample/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install Playwright dependencies and browsers
-RUN pip install --no-cache-dir playwright && playwright install
+RUN pip install --no-cache-dir playwright && playwright install --with-deps
 
 # Copy the test scripts
 COPY tests/test_sample/ tests/test_sample/
 
 # Set the default command to run your script
-CMD ["python3", "tests/test_sample/extract_grid.py"]  
+CMD ["python3", "tests/test_sample/extract_grid.py"]

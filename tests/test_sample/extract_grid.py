@@ -1,6 +1,7 @@
 # How to run this script
 # At the terminal in the project root run the following command
 # python3 /Users/temp/Documents/Coding/the_python_proj/black_licorice/app/src/extract_grid.py
+# Inside Docker: python3 tests/test_sample/extract_grid.py
 import requests
 from bs4 import BeautifulSoup
 

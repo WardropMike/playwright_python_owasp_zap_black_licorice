@@ -5,6 +5,11 @@ Playwright-Python Test Automation Framework ready for cloud and ci/cd. Security 
 You’ll need to start ZAP proxy and configure Playwright to use it:
 Start ZAP Proxy (Manually or via API)
 
+# NIST - CSF
+- IDENTIFY - PROTECT - DETECT - RESPOND - RECOVER
+- Automated Playbooks
+
+
 * Command: zap.sh -daemon -port 8080
 
 Or start it in Python:

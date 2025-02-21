@@ -1,6 +1,15 @@
 # playwright_python_owasp_zap_black_licorice
 Playwright-Python Test Automation Framework ready for cloud and ci/cd. Security Analyst Framework using OWASP ZAP.
 
+# NIST - CSF
+- IDENTIFY - PROTECT - DETECT - RESPOND - RECOVER
+- Automated Playbooks
+
+# For Development
+- Check for any.run tool integration
+- AI Model Integration Security: Page Scan--Security Items to Check
+- AI Model Integration Quality: Page Scan--Quality-UI Items to Test
+
 # To Integrate OWASP ZAP with Playwright
 You’ll need to start ZAP proxy and configure Playwright to use it:
 Start ZAP Proxy (Manually or via API)
